@@ -2,7 +2,6 @@
 
 namespace Lancodev\LaravelLogging;
 
-use Lancodev\LaravelLogging\Commands\LaravelLoggingCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
