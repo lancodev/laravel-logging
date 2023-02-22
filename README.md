@@ -25,16 +25,37 @@ php artisan migrate
 ## Usage
 Add the `Loggable` Trait to your model(s) that you want to log events for.
 
-Then, you can use log events for the Model as follows:
+Then, you can create logs for the model using the `logs` relationship:
 
 ```php
-$model->logs()->create(['log' => 'lorem ipsum']);
+$model->logs()->create([
+    'type' => 'Info',
+    'log' => 'lorem ipsum',
+]);
 ```
 
 To view logs for a given model, you can use the `logs` relationship:
 
 ```php
 $model->logs;
+```
+
+Or use standard Eloquent query language to filter the logs by type, etc:
+
+```php
+$model->logs()->where('type', 'Info')->get();
+```
+
+```
+Lancodev\LaravelLogging\Models\Log {#4244
+  id: 1,
+  loggable_type: "App\Models\User",
+  loggable_id: 1,
+  type: "Info",
+  log: "lorem ipsum",
+  created_at: "2023-01-01 00:00:00",
+  updated_at: "2023-01-01 00:00:00",
+},
 ```
 
 ## Testing
