@@ -1,19 +1,11 @@
-# This is my package laravel-logging
+# Laravel Logging
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/lancodev/laravel-logging.svg?style=flat-square)](https://packagist.org/packages/lancodev/laravel-logging)
 [![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/lancodev/laravel-logging/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/lancodev/laravel-logging/actions?query=workflow%3Arun-tests+branch%3Amain)
 [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/lancodev/laravel-logging/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/lancodev/laravel-logging/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/lancodev/laravel-logging.svg?style=flat-square)](https://packagist.org/packages/lancodev/laravel-logging)
 
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
-
-## Support us
-
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/laravel-logging.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/laravel-logging)
-
-We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
-
-We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
+This package provides a simple way to log events to a database table. It provides a convenient `Loggable` Trait to allow you to link your logs to a model. It also provides a `Log` model that you can use to query your logs.
 
 ## Installation
 
@@ -30,30 +22,19 @@ php artisan vendor:publish --tag="laravel-logging-migrations"
 php artisan migrate
 ```
 
-You can publish the config file with:
-
-```bash
-php artisan vendor:publish --tag="laravel-logging-config"
-```
-
-This is the contents of the published config file:
-
-```php
-return [
-];
-```
-
-Optionally, you can publish the views using
-
-```bash
-php artisan vendor:publish --tag="laravel-logging-views"
-```
-
 ## Usage
+Add the `Loggable` Trait to your model(s) that you want to log events for.
+
+Then, you can use log events for the Model as follows:
 
 ```php
-$laravelLogging = new Lancodev\LaravelLogging();
-echo $laravelLogging->echoPhrase('Hello, Lancodev!');
+$model->logs()->create(['log' => 'lorem ipsum']);
+```
+
+To view logs for a given model, you can use the `logs` relationship:
+
+```php
+$model->logs;
 ```
 
 ## Testing
