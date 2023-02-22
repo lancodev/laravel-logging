@@ -1,17 +1,17 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "lancodev/laravel-logging",
+    "description": "This is my package laravel-logging",
     "keywords": [
-        ":vendor_name",
+        "lancodev",
         "laravel",
-        ":package_slug"
+        "laravel-logging"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/lancodev/laravel-logging",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Kyle Anderson",
+            "email": "kylekanderson@gmail.com",
             "role": "Developer"
         }
     ],
@@ -35,13 +35,13 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories"
+            "Lancodev\\LaravelLogging\\": "src",
+            "Lancodev\\LaravelLogging\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests"
+            "Lancodev\\LaravelLogging\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -61,10 +61,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "Lancodev\\LaravelLogging\\LaravelLoggingServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
+                "LaravelLogging": "Lancodev\\LaravelLogging\\Facades\\LaravelLogging"
             }
         }
     },
