@@ -8,10 +8,11 @@ return new class extends Migration
 {
     public function up()
     {
-        Schema::create('laravel_logging_table', function (Blueprint $table) {
+        Schema::create('logs', function (Blueprint $table) {
             $table->id();
 
-            // add fields
+            $table->morphs('loggable');
+            $table->longText('log')->nullable();
 
             $table->timestamps();
         });

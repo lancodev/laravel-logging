@@ -17,9 +17,7 @@ class LaravelLoggingServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('laravel-logging')
-            ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_laravel-logging_table')
-            ->hasCommand(LaravelLoggingCommand::class);
+            ->hasMigrations(['create_logging_table'])
+            ->runsMigrations();
     }
 }
