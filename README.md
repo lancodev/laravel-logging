@@ -44,18 +44,22 @@ Or use standard Eloquent query language to filter the logs by type, etc:
 
 ```php
 $model->logs()->where('type', 'Info')->get();
-```
 
-```
-Lancodev\LaravelLogging\Models\Log {#4244
+Lancodev\LaravelLogging\Models\Log {
   id: 1,
-  loggable_type: "App\Models\User",
+  loggable_type: "App\Models\{SOME_MODEL}",
   loggable_id: 1,
   type: "Info",
   log: "lorem ipsum",
   created_at: "2023-01-01 00:00:00",
   updated_at: "2023-01-01 00:00:00",
 },
+```
+
+The `Log` model also has a `loggable` relationship that allows you to access the model that the log belongs to:
+
+```php
+$log->loggable;****
 ```
 
 ## Testing
