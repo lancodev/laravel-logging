@@ -3,8 +3,8 @@
 namespace Lancodev\LaravelLogging\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Orchestra\Testbench\TestCase as Orchestra;
 use Lancodev\LaravelLogging\LaravelLoggingServiceProvider;
+use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
 {
