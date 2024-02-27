@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-logging` will be documented in this file.
 
+## v0.6 - 2024-02-27
+
+bump dependencies
+
 ## 0.5 - 2023-02-22
 
 - Composer dependency updates
