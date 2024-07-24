@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-logging` will be documented in this file.
 
+## v0.7 - 2024-07-24
+
+- Laravel 11 Support
+
 ## v0.6 - 2024-02-27
 
 bump dependencies
